@@ -4,6 +4,9 @@ import com.thiago.silva.emailservice.model.Email;
 
 /**
  * EmailSenderUseCase
+ * Representa o contrato interno de implementação de uma
+ * ação de enviar email (A regra de negócio)
+ *
  */
 public interface EmailSenderUseCase {
 
