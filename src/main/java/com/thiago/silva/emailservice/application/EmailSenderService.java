@@ -1,11 +1,13 @@
 package com.thiago.silva.emailservice.application;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.thiago.silva.emailservice.adapters.EmailSenderGateway;
 import com.thiago.silva.emailservice.core.EmailSenderUseCase;
 import com.thiago.silva.emailservice.model.Email;
 
+@Service
 public class EmailSenderService implements EmailSenderUseCase {
 
     // Portão de entrada para o mundo externo
