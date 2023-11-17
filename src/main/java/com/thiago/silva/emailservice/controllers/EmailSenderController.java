@@ -1,5 +1,7 @@
 package com.thiago.silva.emailservice.controllers;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,7 +23,11 @@ public class EmailSenderController {
     private final EmailSenderService service;
     private final EmailMapper mapper;
 
-    @PostMapping
+    // Injecting access key from properties file
+    @Value("${cloud.aws.credentials.access-key}")
+    private String accessKey;
+
+    @PostMapping("/send")
     public ResponseEntity<String> sendEmail(@RequestBody EmailRequest payload) {
 
         try {
